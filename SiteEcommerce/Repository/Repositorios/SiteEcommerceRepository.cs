@@ -19,85 +19,102 @@ namespace Repository.Repositorios
                 new SiteEcommerceEntity
                 (
                     "Smart TV LG 43, 4K com WiFi e Bluetooth",
-                    2399.00
+                    2399.00,
+                    true
                 ),
                  new SiteEcommerceEntity
                 (
                     "Celular",
-                    0.10
+                    0.10,
+                    true
                 ),
                  new SiteEcommerceEntity
                 (
                     "Celular",
-                    0.10
+                    0.10,
+                    true
                 ),
                  new SiteEcommerceEntity
                 (
                     "Celular",
-                    0.10
+                    0.10,
+                    false
+
                 ),
                 new SiteEcommerceEntity
                 (
                     "Celular",
-                    0.10
+                    0.10,
+                    false
                 ),
                 new SiteEcommerceEntity
                 (
                     "Celular",
-                    0.10
+                    0.10,
+                    false
                 ),
                  new SiteEcommerceEntity
                 (
                     "Celular",
-                    0.10
+                    0.10,
+                    false
                 ),
                  new SiteEcommerceEntity
                 (
                     "Celular",
-                    0.10
+                    0.10,
+                    false
                 ),
                  new SiteEcommerceEntity
                 (
                     "Celular",
-                    0.10
+                    0.10,
+                    false
                 ),
                 new SiteEcommerceEntity
                 (
                     "Celular",
-                    0.10
+                    0.10,
+                    false
                 ),
                 new SiteEcommerceEntity
                 (
                     "Celular",
-                    0.10
+                    0.10,
+                    false
                 ),
                  new SiteEcommerceEntity
                 (
                     "Celular",
-                    0.10
+                    0.10,
+                    false
                 ),
                  new SiteEcommerceEntity
                 (
                     "Celular",
-                    0.10
+                    0.10,
+                    false
                 ),
                  new SiteEcommerceEntity
                 (
                     "Celular",
-                    0.10
+                    0.10,
+                    false
                 ),
                 new SiteEcommerceEntity
                 (
                     "Celular",
-                    0.10
+                    0.10,
+                    false
                 )
             };
         }
 
-        public SiteEcommerceEntity GetByProduto(string descricao, double valor)
+        public SiteEcommerceEntity Patch(Guid id, bool situacao)
         {
 
-            var entidade = ListaProdutosEntity.Find(x => x.Descricao == descricao && x.Valor == valor);
+            var entidade = ListaProdutosEntity.Find(x => x.Id == id);
+            entidade.Situacao = situacao;
 
             return entidade;
         }

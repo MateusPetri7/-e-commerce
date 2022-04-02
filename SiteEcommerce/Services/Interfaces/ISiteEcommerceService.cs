@@ -9,13 +9,10 @@ namespace Services.Interfaces
 {
     public interface ISiteEcommerceService
     {
-        public (int, object) Insert(SiteEcommerceDto siteEcommerceDto);
+        public (int, object) Patch(Guid id, SiteEcommerceDto siteEcommerceDto);
+        
         //public UsuarioRetornoDto GetById(Guid id);
 
-        //public (int, object) Put(Guid id, UsuarioDto usuarioDto);
-
-        //public (int, object) Patch(Guid id, UsuarioDto usuarioDto);
-
-        //public (int, object) Delete(Guid id);
+       
     }
 }

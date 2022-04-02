@@ -11,13 +11,14 @@ namespace Services.Dto
     {
         public Guid Id { get; set; }
 
-        public static RetornoDto DeUsuarioEntityParaUsuarioRetornoDto(SiteEcommerceEntity siteEcommerceEntity)
+        public static RetornoDto DeSiteEcommerceEntityParaRetornoDto(SiteEcommerceEntity siteEcommerceEntity)
         {
             return new RetornoDto
             {
                 Id = siteEcommerceEntity.Id,
                 Descricao = siteEcommerceEntity.Descricao,
                 Valor = siteEcommerceEntity.Valor,
+                Situacao = siteEcommerceEntity.Situacao
             };
         }
     }
