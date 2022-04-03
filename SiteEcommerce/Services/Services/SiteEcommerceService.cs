@@ -31,20 +31,25 @@ namespace Services.Services
             return ((int)EnumRetornoHttp.Ok, RetornoDto.DeSiteEcommerceEntityParaRetornoDto(entidade));
         }
 
-        //public (int, object) Delete(Guid id)
-        //{
-        //    var result = _siteEcommerceRepository.GetById(id);
+        public (int, object) GetCollection()
+        {
+            
+            var listaEntidade = _siteEcommerceRepository.GetCollection();
 
-        //    if (result == null)
-        //    {
-        //        return ((int)EnumRetornoHttp.NotFound, new MensagemRetornoDto("Produto não encontrado."));
-        //    }
+            if (!listaEntidade.Any())
+            {
+                return ((int)EnumRetornoHttp.NotFound, new MensagemRetornoDto("Nenhum produto encontrado."));
+            }
 
-        //    _siteEcommerceRepository.Delete(result);
+            List<RetornoDto> listaRetornoDto = new List<RetornoDto>();
 
-        //    return ((int)EnumRetornoHttp.Ok, new MensagemRetornoDto("O produto foi removido do carrinho!"));
-        //}
+            foreach (var item in listaEntidade)
+            {
+                listaRetornoDto.Add(RetornoDto.DeSiteEcommerceEntityParaRetornoDto(item));
+            }
 
+            return ((int)EnumRetornoHttp.Ok, listaRetornoDto);
+        }
 
     }
 }

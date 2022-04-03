@@ -20,93 +20,73 @@ namespace Repository.Repositorios
                 (
                     "Smart TV LG 43, 4K com WiFi e Bluetooth",
                     2399.00,
-                    true
+                    true,
+                    ".images/image01"
                 ),
                  new SiteEcommerceEntity
                 (
                     "Celular",
                     0.10,
-                    true
+                    true,
+                    ".images/image02"
                 ),
                  new SiteEcommerceEntity
                 (
                     "Celular",
                     0.10,
-                    true
+                    true,
+                    ".images/image03"
                 ),
                  new SiteEcommerceEntity
                 (
                     "Celular",
                     0.10,
-                    false
+                    false,
+                    ".images/image04"
 
                 ),
                 new SiteEcommerceEntity
                 (
                     "Celular",
                     0.10,
-                    false
+                    false,
+                    ".images/image05"
                 ),
                 new SiteEcommerceEntity
                 (
                     "Celular",
                     0.10,
-                    false
+                    false,
+                    ".images/image06"
                 ),
                  new SiteEcommerceEntity
                 (
                     "Celular",
                     0.10,
-                    false
+                    false,
+                    ".images/image07"
                 ),
                  new SiteEcommerceEntity
                 (
                     "Celular",
                     0.10,
-                    false
+                    false,
+                    ".images/image08"
                 ),
                  new SiteEcommerceEntity
                 (
                     "Celular",
                     0.10,
-                    false
+                    false,
+                    ".images/image09"
                 ),
                 new SiteEcommerceEntity
                 (
                     "Celular",
                     0.10,
-                    false
+                    false,
+                    ".images/image010"
                 ),
-                new SiteEcommerceEntity
-                (
-                    "Celular",
-                    0.10,
-                    false
-                ),
-                 new SiteEcommerceEntity
-                (
-                    "Celular",
-                    0.10,
-                    false
-                ),
-                 new SiteEcommerceEntity
-                (
-                    "Celular",
-                    0.10,
-                    false
-                ),
-                 new SiteEcommerceEntity
-                (
-                    "Celular",
-                    0.10,
-                    false
-                ),
-                new SiteEcommerceEntity
-                (
-                    "Celular",
-                    0.10,
-                    false
-                )
             };
         }
 
@@ -117,6 +97,11 @@ namespace Repository.Repositorios
             entidade.Situacao = situacao;
 
             return entidade;
+        }
+
+        public List<SiteEcommerceEntity> GetCollection()
+        {
+            return ListaProdutosEntity;
         }
     }
 }

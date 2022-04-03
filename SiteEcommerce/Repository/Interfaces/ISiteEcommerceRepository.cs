@@ -1,5 +1,6 @@
 ﻿using Repository.Entidades;
 using System;
+using System.Collections.Generic;
 
 namespace Repository.Interfaces
 {
@@ -8,6 +9,7 @@ namespace Repository.Interfaces
         // SiteEcommerceEntity GetByProduto(string descricao, double valor);
         //object GetById(Guid id);
         SiteEcommerceEntity Patch(Guid id, bool situacao);
+        List<SiteEcommerceEntity> GetCollection();
         //void Delete(object result);
     }
 }

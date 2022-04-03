@@ -18,7 +18,8 @@ namespace Services.Dto
                 Id = siteEcommerceEntity.Id,
                 Descricao = siteEcommerceEntity.Descricao,
                 Valor = siteEcommerceEntity.Valor,
-                Situacao = siteEcommerceEntity.Situacao
+                Situacao = siteEcommerceEntity.Situacao,
+                Imagem = siteEcommerceEntity.Imagem
             };
         }
     }

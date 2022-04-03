@@ -21,23 +21,18 @@ namespace SiteEcommerce.Controllers
             _siteEcommerceService = siteEcommerceService;
         }
 
-        //[HttpPost]
-        //public IActionResult Post([FromBody]SiteEcommerceDto siteEcommerceDto)
-        //{
-        //    var (statusCode, siteEcommerceRetornoDto) = _siteEcommerceService.Insert(siteEcommerceDto);
-
-        //    return StatusCode(statusCode, siteEcommerceRetornoDto);
-        //}
-
-        [HttpGet("get")]
-        public IActionResult Get(Guid id)
+        [HttpPatch("patch")]
+        public IActionResult Patch(Guid id, [FromBody]SiteEcommerceDto siteEcommerceDto)
         {
-            var resultado = _siteEcommerceService.GetById(id);
+            var resultado = _siteEcommerceService.Patch(id, siteEcommerceDto);
 
-            if (resultado.Id == null)
-            {
-                return NotFound("Não existe registros salvos com o ID informado!");
-            }
+            return Ok(resultado);
+        }
+
+        [HttpGet("getcollection")]
+        public IActionResult GetCollection()
+        {
+            var resultado = _siteEcommerceService.GetCollection();
 
             return Ok(resultado);
         }
