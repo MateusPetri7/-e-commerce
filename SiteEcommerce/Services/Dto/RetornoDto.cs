@@ -9,6 +9,9 @@ namespace Services.Dto
 {
     public class RetornoDto : SiteEcommerceBaseDto
     {
+        public string Descricao { get; set; }
+        public double Valor { get; set; }
+        public string Imagem { get; set; }
         public Guid Id { get; set; }
 
         public static RetornoDto DeSiteEcommerceEntityParaRetornoDto(SiteEcommerceEntity siteEcommerceEntity)

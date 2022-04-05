@@ -24,17 +24,17 @@ namespace SiteEcommerce.Controllers
         [HttpPatch("patch")]
         public IActionResult Patch(Guid id, [FromBody]SiteEcommerceDto siteEcommerceDto)
         {
-            var resultado = _siteEcommerceService.Patch(id, siteEcommerceDto);
+            var (statusCode, retornoDto) = _siteEcommerceService.Patch(id, siteEcommerceDto);
 
-            return Ok(resultado);
+            return StatusCode(statusCode, retornoDto);
         }
 
         [HttpGet("getcollection")]
         public IActionResult GetCollection()
         {
-            var resultado = _siteEcommerceService.GetCollection();
-
-            return Ok(resultado);
-        }
+            var (statusCode, listRetornoDto) = _siteEcommerceService.GetCollection();
+                                      
+            return StatusCode(statusCode, listRetornoDto);    
+        }                            
     }
 }
