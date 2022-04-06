@@ -7,12 +7,13 @@ const listaCarrinho = document.querySelector('#cart-products');
 
 
 myJson = GetProdutos();
-function GetProdutos(){
+async function GetProdutos(){
   try {
     //transformar async dps
-    //var response = await fetch('https://localhost:5500/')
-    //var myJson = await response.json();
-    myJson = [
+    var response = await fetch('https://localhost:44309/SiteEcommerce/getcollection')
+    var myJson = await response.json();
+    console.log(myJson)
+    /*myJson = [
       {
         id: "guid louco1",
         link: "./images/image01.png",
@@ -34,9 +35,9 @@ function GetProdutos(){
         descricao: "aaa",
         preco: "999"
       },
-    ]
+    ]*/
 
-    return myJson;
+    PopularProdutos(myJson)
 
   } catch (error) {
     console.log(error)

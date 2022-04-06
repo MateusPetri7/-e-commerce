@@ -24,9 +24,6 @@ namespace SiteEcommerce
         {
             Configuration = configuration;
         }
-
-        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -34,7 +31,7 @@ namespace SiteEcommerce
         {
             services.AddCors(options =>
             {
-            options.AddPolicy(name: MyAllowSpecificOrigins,
+            options.AddPolicy(name: "_myAllowSpecificOrigins",
                 builder => {
                             builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
                             });
@@ -67,6 +64,8 @@ namespace SiteEcommerce
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("_myAllowSpecificOrigins");
 
             app.UseEndpoints(endpoints =>
             {
