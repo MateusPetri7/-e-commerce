@@ -18,89 +18,89 @@ namespace Repository.Repositorios
             {
                 new SiteEcommerceEntity
                 (
-                    "Smart TV LG 43, 4K com WiFi e Bluetooth",
-                    2399.00,
+                    "Teclado Mecânico",
+                    799.00,
                     true,
-                    "./images/image01"
+                    "./images/image01.png"
                 ),
                  new SiteEcommerceEntity
                 (
-                    "Celular",
-                    0.10,
+                    "Tablet Samsung",
+                    999.99,
                     true,
-                    "./images/image02"
+                    "./images/image02.png"
                 ),
                  new SiteEcommerceEntity
                 (
-                    "Celular",
-                    0.10,
+                    "Air Pods",
+                    1499.99,
                     true,
-                    "./images/image03"
+                    "./images/image03.png"
                 ),
                  new SiteEcommerceEntity
                 (
-                    "Celular",
-                    0.10,
+                    "Cadeira Fortrek Gamer",
+                    1479.99,
                     false,
-                    "./images/image04"
+                    "./images/image04.png"
 
                 ),
                 new SiteEcommerceEntity
                 (
-                    "Celular",
-                    0.10,
+                    "Mouse Gamer Razer",
+                    459.99,
                     false,
-                    "./images/image05"
+                    "./images/image05.png"
                 ),
                 new SiteEcommerceEntity
                 (
-                    "Celular",
-                    0.10,
+                    "Nokia Tijolão",
+                    399.99,
                     false,
-                    "./images/image06"
+                    "./images/image06.png"
                 ),
                  new SiteEcommerceEntity
                 (
-                    "Celular",
-                    0.10,
+                    "Microfone Gamer para jogos",
+                    629.99,
                     false,
-                    "./images/image07"
+                    "./images/image07.png"
                 ),
                  new SiteEcommerceEntity
                 (
-                    "Celular",
-                    0.10,
+                    "Polystation",
+                    199.99,
                     false,
-                    "./images/image08"
+                    "./images/image08.png"
                 ),
                  new SiteEcommerceEntity
                 (
-                    "Celular",
-                    0.10,
+                    "playstation 5",
+                    4699.99,
                     false,
-                    "./images/image09"
+                    "./images/image09.png"
                 ),
                 new SiteEcommerceEntity
                 (
-                    "Celular",
-                    1000.00,
+                    "Monitor Gamer Full Hd 165Hz",
+                    1399.99,
                     false,
-                    "./images/image010"
+                    "./images/image10.png"
                 ),
             };
         }
 
-        public SiteEcommerceEntity Patch(Guid id, bool situacao)
+        public List<SiteEcommerceEntity> Patch(Guid id)
         {
 
             var entidade = ListaProdutosEntity.Find(x => x.Id == id);
 
             if (entidade != null)
             {
-                entidade.Situacao = situacao;
+                entidade.Situacao = !entidade.Situacao;
             }
 
-            return entidade;
+            return ListaProdutosEntity;
         }
 
         public List<SiteEcommerceEntity> GetCollection()

@@ -22,11 +22,11 @@ namespace SiteEcommerce.Controllers
         }
 
         [HttpPatch("patch")]
-        public IActionResult Patch(Guid id, [FromBody]SiteEcommerceDto siteEcommerceDto)
+        public IActionResult Patch(Guid id)
         {
-            var (statusCode, retornoDto) = _siteEcommerceService.Patch(id, siteEcommerceDto);
+            var (statusCode, listRetornoDto) = _siteEcommerceService.Patch(id);
 
-            return StatusCode(statusCode, retornoDto);
+            return StatusCode(statusCode, listRetornoDto);
         }
 
         [HttpGet("getcollection")]

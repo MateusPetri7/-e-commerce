@@ -19,16 +19,23 @@ namespace Services.Services
             _siteEcommerceRepository = siteEcommerceRepository;
         }
 
-        public (int, object) Patch(Guid id, SiteEcommerceDto siteEcommerceDto)
+        public (int, object) Patch(Guid id)
         {
-            var entidade = _siteEcommerceRepository.Patch(id, siteEcommerceDto.Situacao);
+            var listaEntidade = _siteEcommerceRepository.Patch(id);
 
-            if (entidade == null)
+            if (!listaEntidade.Any())
             {
                 return ((int)EnumRetornoHttp.NotFound, new MensagemRetornoDto("Produto não encontrado."));
             }
 
-            return ((int)EnumRetornoHttp.Ok, RetornoDto.DeSiteEcommerceEntityParaRetornoDto(entidade));
+            List<RetornoDto> listaRetornoDto = new List<RetornoDto>();
+
+            foreach (var item in listaEntidade)
+            {
+                listaRetornoDto.Add(RetornoDto.DeSiteEcommerceEntityParaRetornoDto(item));
+            }
+
+            return ((int)EnumRetornoHttp.Ok, listaRetornoDto);
         }
 
         public (int, object) GetCollection()

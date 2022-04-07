@@ -9,7 +9,7 @@ namespace Services.Interfaces
 {
     public interface ISiteEcommerceService
     {
-        public (int, object) Patch(Guid id, SiteEcommerceDto siteEcommerceDto);
+        public (int, object) Patch(Guid id);
         public (int, object) GetCollection();
 
     }

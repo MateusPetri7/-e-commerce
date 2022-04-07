@@ -6,10 +6,7 @@ namespace Repository.Interfaces
 {
     public interface ISiteEcommerceRepository
     {
-        // SiteEcommerceEntity GetByProduto(string descricao, double valor);
-        //object GetById(Guid id);
-        SiteEcommerceEntity Patch(Guid id, bool situacao);
+        List<SiteEcommerceEntity> Patch(Guid id);
         List<SiteEcommerceEntity> GetCollection();
-        //void Delete(object result);
     }
 }
