@@ -19,7 +19,7 @@ namespace Repository.Repositorios
                 new SiteEcommerceEntity
                 (
                     "Teclado Mecânico",
-                    799.00,
+                    799.49,
                     true,
                     "./images/image01.png"
                 ),
